@@ -1,12 +1,12 @@
-def encode_password(password):
+def encode_password(password):  # encodes a new password where each digit is changed by +3
     iter = 0  # counts iterations
-    digit_list = [int(digit) for digit in password]
+    digit_list = [int(digit) for digit in password]  # converts string to list of ints
     while iter <= 7:
         digit_list[iter] += 3
         if digit_list[iter] > 9:
             digit_list[iter] -= 10
         iter += 1
-    new_password = ''.join(str(digit) for digit in digit_list)
+    new_password = ''.join(str(digit) for digit in digit_list)  # reconverts list back to string
     return str(new_password)
 
 
