@@ -1,3 +1,5 @@
+# Ben Stratton Lab 6
+
 def encode_password(password):  # encodes a new password where each digit is changed by +3
     iter = 0  # counts iterations
     digit_list = [int(digit) for digit in password]  # converts string to list of ints
