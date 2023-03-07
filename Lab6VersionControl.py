@@ -10,6 +10,16 @@ def encode_password(password):  # encodes a new password where each digit is cha
     return str(new_password)
 
 
+def decode_password(encoded_pwd_arg):
+    decoded_pwd = ""
+    for i in encoded_pwd_arg:
+        raw_pwd = int(i) - 3
+        if raw_pwd < 0:
+            raw_pwd += 10
+        decoded_pwd += str(raw_pwd)
+    return decoded_pwd
+
+
 while True:
     print('Menu', '-------------', '1. Encode', '2. Decode', '3. Quit', sep='\n')
     print()
@@ -17,7 +27,10 @@ while True:
     if option == 1:
         pwd = str(input('Please enter your password to encode: '))
         encoded_pwd = encode_password(pwd)
-        print('Your password has been encoded and stored!')
+        print('Your password has been encoded and stored!\n')
+        # print(encoded_pwd)
+    elif option == 2:
+        print(f"The encoded password is {encoded_pwd}, and the original password is {decode_password(encoded_pwd)}.\n")
     elif option == 3:
         break
 
